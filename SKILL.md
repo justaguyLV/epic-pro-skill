@@ -1,6 +1,6 @@
 ---
 name: epic-pro
-description: Pro video-editing toolkit (Epic Pro). Use for any video/montage/reel/short-form editing request (مونتاج، انتقالات، مؤثرات صوتية، خطوط، فيديو سينمائي): editing instructions, ready-made CC0 sound effects and whooshes, GL/FFmpeg transitions, OFL fonts incl. Arabic, 3D/VFX asset sources, a voice/sound generation tool, and an internet-connected dev environment. Use ready assets from this skill first; do not synthesize assets by hand.
+description: Pro video-editing toolkit (Epic Pro). Use for any video/montage/reel/short-form editing request (مونتاج، انتقالات، مؤثرات صوتية، خطوط، فيديو سينمائي): editing instructions, ready-made CC0 sound effects and whooshes, GL/FFmpeg transitions, OFL fonts incl. Arabic, 3D/VFX asset sources, a voice/sound generation tool, and a dev-environment script. Use ready assets from this skill first; do not synthesize assets by hand.
 ---
 
 # Epic Pro
@@ -29,5 +29,5 @@ Pick by mood: whoosh/swish for cuts, impact/stinger for hits, riser before drops
 ## 4) Voice / sound generation tool -> `tools/audio_gen.py`
 CLI wrapper around open models (Kokoro TTS, Bark, AudioCraft AudioGen/MusicGen). Run `python tools/audio_gen.py --help`. Needs a GPU runtime (e.g. Colab). Note: AudioCraft model weights are CC-BY-NC (non-commercial).
 
-## 5) Internet-connected dev environment -> `tools/devenv/`
-`setup_codeserver.sh` installs code-server (VS Code in the browser) and exposes it through a Cloudflare quick tunnel; works on Colab/VPS. See `tools/devenv/README.md`.
+## 5) Dev environment (for the user, not callable by Claude) -> `tools/devenv/`
+`setup_codeserver.sh` starts code-server (VS Code in the browser) with a public tunnel on a Colab/VPS. It is a human-facing tool: Claude cannot reach it from the chat sandbox. For Claude to run commands with full internet, use Claude Code.
